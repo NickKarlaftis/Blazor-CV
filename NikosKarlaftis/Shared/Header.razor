@@ -1,0 +1,18 @@
+﻿@using NikosKarlaftis.Shared.ActionButtons
+
+<div class="name-header-wrapper">
+    <div class="name-header">@ChildContent</div>
+
+    <div class="action-buttons-wrapper flex-row">
+        <DownloadCvButton/>
+        <GitHubButton Url="https://github.com/NickKarlaftis" />
+        <EmailButton Email="NikoKarlS3@gmail.com"/>
+        <LinkedInButton Url="https://www.linkedin.com/in/nikos-karlaftis-4829989b"/>
+    </div>
+</div>
+
+@code
+{
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}

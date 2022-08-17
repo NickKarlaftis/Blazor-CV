@@ -1,0 +1,14 @@
+﻿<div class="flex-row table-cell">
+    <div class="key-value-pair">
+        <div class="key">@Key</div>
+        <div class="value">@Value</div>
+    </div>
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public string Key { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public string Value { get; set; } = default!;
+}

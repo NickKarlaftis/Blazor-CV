@@ -1,0 +1,11 @@
+﻿<div class="flex-col expertise">
+    <div class="flex-col table-col">
+        <div class="flex-row table">
+            @ChildContent
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+    }

@@ -1,0 +1,142 @@
+@import "_variables.scss";
+
+//Typography rules
+h1,
+h2,
+h3,
+h4,
+form legend {
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-xxs);
+  line-height: var(--heading-line-height);
+}
+
+/* text size */
+.text--xxxxl {
+  font-size: var(--text-xxxxl);
+}
+
+.text--xxxl {
+  font-size: var(--text-xxxl);
+}
+
+h1,
+.text--xxl {
+  font-size: var(--text-xxl);
+}
+
+h2,
+.text--xl {
+  font-size: var(--text-xl);
+}
+
+h3,
+.text--lg {
+  font-size: var(--text-lg);
+}
+
+h4,
+.text--md {
+  font-size: var(--text-md);
+}
+
+.text--sm,
+small {
+  font-size: var(--text-sm);
+}
+
+.text--xs {
+  font-size: var(--text-xs);
+}
+
+.text--body {
+  font-size: var(--text-base-size);
+}
+
+.f-w-light {
+  font-weight: var(--font-weight-light);
+}
+
+.f-w-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.f-w-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+//Spacing rules
+.text-container {
+  h1 {
+    margin-top: var(--space-none);
+    margin-bottom: var(--space-sm);
+  }
+
+  h2,
+  h3,
+  h4 {
+    margin-top: var(--space-none);
+    margin-bottom: var(--space-md);
+  }
+
+  ul,
+  ol,
+  p {
+    margin-top: var(--space-none);
+    margin-bottom: var(--space-md);
+  }
+}
+
+.truncate {
+  // truncate text if it exceeds parent
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Flex helper classes */
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-spacebetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.full-w {
+  width: 100%;
+}
+
+.m-r_4 {
+  margin-right: 4px;
+}
+
+.m-r_8 {
+  margin-right: 8px;
+}
+
+.m-r_16 {
+  margin-right: 16px;
+}
+
+.m-b_48 {
+  margin-bottom: 48px;
+}

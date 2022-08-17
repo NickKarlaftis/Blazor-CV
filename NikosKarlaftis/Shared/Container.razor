@@ -1,0 +1,18 @@
+﻿<div class="container flex-col</div>">
+    <div class="experience flex-col full-w">
+        <h2 class="subject-title">@((MarkupString) FormatTitle)</h2>
+        <div class="content">
+            @ChildContent
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public string? Title { get; set; }
+
+    private string FormatTitle => Title?.Replace("/", "<span>/</span>") ?? "";
+}

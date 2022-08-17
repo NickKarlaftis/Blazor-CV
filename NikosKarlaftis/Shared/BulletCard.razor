@@ -1,0 +1,27 @@
+﻿<div class="flex-col table-col">
+    <div class="flex-row table-cell table-title">
+        <h4>@Title</h4>
+    </div>
+
+    @foreach (var point in GetBulletPoints())
+    {
+        <div class="flex-row table-cell">@point</div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public IEnumerable<string> BulletPoints { get; set; } = Enumerable.Empty<string>();
+
+    private IEnumerable<string> GetBulletPointsFromChildContent() =>
+        ChildContent?.ToString()?.Split(';') ?? Enumerable.Empty<string>();
+
+    private IEnumerable<string> GetBulletPoints() =>
+        Enumerable.Concat(BulletPoints, GetBulletPointsFromChildContent());
+}

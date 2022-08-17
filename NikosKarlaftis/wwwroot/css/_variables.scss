@@ -1,0 +1,58 @@
+/* CSS Variables */
+:root {
+  --color-accent-dark: #004EF5;
+  --color-accent-light: #4782FF;
+
+  --bg-dark: #ebebeb;
+  --bg-light: #f5f5f5;
+  --bg-white: #fefefe;
+
+  --font-color-primary: #090809;
+  --font-color-secondary: #897F89;
+  --font-color-accent: var(--color-accent-dark);
+
+  --max-width-container: 1260px;
+
+  --margin-top-header: 144px;
+  //calculates => header=80px, its' top position=32px, plus margin-bottom 32px, = 144px
+
+  /* Typography Rules */
+
+  //Typography variables
+  // _typography.scss
+  --font-primary: 'Space Grotesk', sans-serif;
+  --font-secondary: 'Space Grotesk', sans-serif;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
+
+  /* set base values */
+  --text-base-size: 1em;
+  --text-scale-ratio: 1.333;
+
+  /* type scale */
+  --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+  --text-sm: calc(1em / var(--text-scale-ratio));
+  --text-md: calc(1em * var(--text-scale-ratio));
+  --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  /* line-height */
+  --heading-line-height: 1.2;
+  --body-line-height: 1.4;
+
+  //Spacing variables
+  /* spacing values */
+  --space-unit: 16px;
+  --space-none: 0;
+  --space-xxs: calc(0.25 * var(--space-unit)); // 4px
+  --space-xs: calc(0.5 * var(--space-unit)); // 8px
+  --space-sm: calc(0.75 * var(--space-unit)); // 12px
+  --space-md: calc(1.25 * var(--space-unit)); // 20px
+  --space-lg: calc(2 * var(--space-unit)); // 32px
+  --space-xl: calc(3.25 * var(--space-unit)); // 52px
+  --space-xxl: calc(5.25 * var(--space-unit)); // 84px
+}
