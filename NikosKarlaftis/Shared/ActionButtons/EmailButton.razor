@@ -1,4 +1,7 @@
-﻿@inject IJSRuntime JSRuntime
+﻿@using NikosKarlaftis.Shared.ActionButtons
+
+@inject IToastService toastService
+@inject IJSRuntime JSRuntime
 
 <a class="btn btn-outline btn-rounded" @onclick="CopyEmailToClipboard">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -12,8 +15,18 @@
     [Parameter]
     public string? Email { get; set; }
 
+    private DotNetObjectReference<EmailButton>? objRef;
+
     private async Task CopyEmailToClipboard()
     {
-        await JSRuntime.InvokeVoidAsync("clipboardCopy.copyText", Email);
+        objRef = DotNetObjectReference.Create(this);
+        await JSRuntime.InvokeVoidAsync("clipboardCopy.copyText", objRef, Email);
+    }
+
+    [JSInvokable]
+    public void ShowToast(string msg, ToastLevel toastLevel)
+    {
+        RenderFragment message = @<text>@msg</text>;
+        toastService.ShowToast(toastLevel, message);
     }
 }

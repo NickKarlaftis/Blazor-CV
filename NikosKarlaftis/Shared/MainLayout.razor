@@ -1,6 +1,14 @@
-﻿@inherits LayoutComponentBase
+﻿@using Blazored.Toast.Configuration
+@inherits LayoutComponentBase
 
 <div class="grid-wrapper main-container ">
+    <BlazoredToasts Position="ToastPosition.TopCenter"
+                    Timeout="2"
+                    InfoClass="info-toast-override"
+                    IconType="IconType.FontAwesome"
+                    InfoIcon="fas fa-solid fa-info"
+                    ErrorIcon="fas fa-solid fa-bug"
+                    ShowCloseButton="true"/>
     <div class="box right-wrapper customized-scrollbar-invert">
         <div class="main-cv-wrapper">
             <Header>Nikos Karlaftis</Header>

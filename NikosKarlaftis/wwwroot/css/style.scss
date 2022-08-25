@@ -141,6 +141,12 @@ strong {
 /** COMPONENTS **/
 /*-------------*/
 
+/* Toast overrides */
+
+.info-toast-override {
+    background-color: var(--color-accent-dark);
+}
+
 /* Key value pair */
 .key-value-pair {
     .key {

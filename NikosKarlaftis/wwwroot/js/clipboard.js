@@ -1,11 +1,13 @@
 ﻿{
     window.clipboardCopy = {
-        copyText: function (text) {
+        copyText: function (dotNetHelper, text) {
             navigator.clipboard.writeText(text).then(function () {
-                alert("Copied to clipboard!");
+                dotNetHelper.invokeMethodAsync('ShowToast', 'Email copied to clipboard!', 0);
+                /*alert("Copied to clipboard!");*/
             })
                 .catch(function (error) {
-                    alert(error);
+                    dotNetHelper.invokeMethodAsync('ShowToast', error, 3);
+                    /*alert(error);*/
                 });
         }
     };
