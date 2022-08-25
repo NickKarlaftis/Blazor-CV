@@ -1,41 +1,74 @@
 ﻿.tooltip-wrapper {
     position: relative;
     display: inline-block;
-    cursor: help;
 }
 
-span {
-    visibility: hidden;
-    position: absolute;
-    width: 120px;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -60px;
-    background-color: #363636;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    z-index: 1;
-}
-
-    span::after {
-        content: "";
+    .tooltip-wrapper span {
+        visibility: hidden;
+        width: 200px;
+        background-color: var(--font-color-secondary);
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        /* Position the tooltip */
         position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: #555 transparent transparent transparent;
+        z-index: 1;
     }
 
-.tooltip-wrapper:active span {
-    visibility: visible;
+        .tooltip-wrapper span::after {
+            content: "";
+            position: absolute;
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+        }
+
+@media only screen and (min-width: 1128px) {
+    .tooltip-wrapper span {
+        top: 110%;
+        left: 50%;
+        margin-left: -95px;
+    }
+
+        .tooltip-wrapper span::after {
+            bottom: 100%;
+            left: 50%;
+            border-color: transparent transparent var(--font-color-secondary) transparent;
+        }
+
+    .tooltip-wrapper:hover span {
+        visibility: visible;
+    }
 }
 
 @media only screen and (max-width: 1630px) and (min-width: 912px) {
+    .tooltip-wrapper span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+        height: 60px;
+        min-height: 60px;
+        top: 0%;
+        transform: translateX(-150px);
+        z-index: 999;
+    }
+
+        .tooltip-wrapper span::after {
+            top: 50%;
+            left: 100%;
+            border-color: transparent transparent transparent var(--font-color-secondary);
+        }
+
     .tooltip-wrapper {
         margin-bottom: 16px;
     }
+
+        .tooltip-wrapper:hover span {
+            visibility: visible;
+        }
+}
+
+@media only screen and (max-width: 912px) {
 }

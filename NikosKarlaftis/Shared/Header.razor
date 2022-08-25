@@ -4,10 +4,16 @@
     <div class="name-header">@ChildContent</div>
 
     <div class="action-buttons-wrapper flex-row">
-        <DownloadCvButton/>
-        <GitHubButton Url="https://github.com/NickKarlaftis" />
-        <EmailButton Email="NikoKarlS3@gmail.com"/>
-        <LinkedInButton Url="https://www.linkedin.com/in/nikos-karlaftis-4829989b"/>
+        <DownloadCvButton />
+        <Tooltip Text="https://github.com/NickKarlaftis">
+            <GitHubButton Url="https://github.com/NickKarlaftis" />
+        </Tooltip>
+        <Tooltip Text="NikoKarlS3@gmail.com">
+            <EmailButton Email="NikoKarlS3@gmail.com" />
+        </Tooltip>
+        <Tooltip Text="https://www.linkedin.com/in/nikos-karlaftis-4829989b">
+            <LinkedInButton Url="https://www.linkedin.com/in/nikos-karlaftis-4829989b" />
+        </Tooltip>
     </div>
 </div>
 
