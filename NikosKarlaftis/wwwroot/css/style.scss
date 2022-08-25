@@ -30,7 +30,6 @@ strong {
 /* LAYOUT */
 /*--------*/
 .main-cv-wrapper {
-    //margin-top: var(--margin-top-header);
     padding: 64px 64px 32px 64px;
     position: relative;
     height: 100%;
@@ -50,7 +49,7 @@ strong {
 .container {
     max-width: var(--max-width-container);
     height: auto;
-    margin: 0 0 128px auto;
+    margin: 0 0 var(--space-xxxl) auto;
     display: block;
 
     .content {
