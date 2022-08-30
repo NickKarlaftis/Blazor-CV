@@ -14,6 +14,7 @@
         /* Position the tooltip */
         position: absolute;
         z-index: 1;
+        word-break: break-all;
     }
 
         .tooltip-wrapper span::after {
