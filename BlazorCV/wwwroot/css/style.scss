@@ -318,6 +318,8 @@ strong {
     }
 
     .key-value-pair {
+        height: var(--space-xxl);
+
         .value {
             font-size: var(--text-md);
         }
