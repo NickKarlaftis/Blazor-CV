@@ -32,7 +32,7 @@
 						// 3D to 2D projection
 						float s = FOV / (FOV - tz);
 						float x = s > 0.0 ? tx * s : 0.0;
-						float y = s > 0.0 ? ty * s : -2000.0;
+						float y = s > 0.0 ? ty * s : 0.0;
 						gl_Position = vec4(
 							( (uResolution.x * 0.5 + x) / uResolution.x * 2.0) - 1.0, 
 							( (-uResolution.y * 0.5 -y) / uResolution.y * 2.0) + 1.0, 
@@ -97,12 +97,12 @@
     // init pointer
     const pointer = {
         init(canvas) {
-            this.x = canvas.width * 0.5;
-            this.y = canvas.height * 0.5;
-            //this.ex = this.x;
-            //this.ey = this.y * 1;
+            this.x = canvas.width * 1.5;
+            this.y = canvas.height * 1.5;
             this.ex = 0;
-            this.ey = this.y;
+            this.ey = this.y * 1;
+            //this.ex = 0;
+            //this.ey = this.y;
             ["mousemove", "touchstart", "touchmove"].forEach((event, touch) => {
                 document.addEventListener(
                     event,
@@ -110,10 +110,10 @@
                         if (touch) {
                             e.preventDefault();
                             this.x = e.targetTouches[0].clientX;
-                            this.y = e.targetTouches[0].clientY;
+                            //this.y = e.targetTouches[0].clientY;
                         } else {
                             this.x = e.clientX;
-                            this.y = e.clientY;
+                            //this.y = e.clientY;
                         }
                     },
                     false
@@ -207,10 +207,10 @@
         requestAnimationFrame(run);
         pointer.ease(0.01);
         // rotation
-        //const ry = (pointer.ex - canvas.width * 0.9) / (canvas.width * 0.9);
-        //const rx = (pointer.ey - canvas.height * 0.9) / (canvas.height * 0.9);
-        const ry = (pointer.ex - canvas.width * 0.5) / (canvas.width * 0.33);
-        const rx = (pointer.ey - canvas.height * 0.5) / (canvas.height * 0.33);
+        const ry = (pointer.ex - canvas.width * 1.5) / (canvas.width * 1.5);
+        const rx = (pointer.ey - canvas.height * 1.5) / (canvas.height * 1.5);
+        //const ry = (pointer.ex - canvas.width * 0.5) / (canvas.width * 0.33);
+        //const rx = (pointer.ey - canvas.height * 0.5) / (canvas.height * 0.33);
         gl.uniform4f(
             uRotation,
             Math.cos(rx),
